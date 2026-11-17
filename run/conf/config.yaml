@@ -1,0 +1,68 @@
+# Main pipeline configuration.
+# Override on the CLI with dotlist syntax, e.g.:
+#   tbm-rop all kalman.mode=causal kalman.process_noise=0.1
+
+seed: 42
+
+paths:
+  raw: data/raw/ENGEO_Gokceoglu_et_al_TBM_2022.xlsx
+  processed: data/processed
+  outputs: outputs
+
+features:
+  steps: [physics, temporal, clustering, polynomial]
+  include_row_index: false  # true only for replicating the original pipeline
+  step_params: {}
+
+cv:
+  scheme: shuffled  # shuffled | blocked
+  n_splits: 5
+  random_state: 42
+  gap: 0            # purge width for blocked scheme
+
+kalman:
+  mode: causal      # causal | smoother | none (ablation: raw OOF features)
+  process_noise: 0.1
+
+# Stage 'nested': strictly nested evaluation of the augmented table. The OOF
+# columns are rebuilt inside each outer fold from outer-training rows only.
+nested:
+  inner_splits: 5
+
+# Stage 'tune': Optuna search (nested for honest metrics + flat for stack params).
+tuning:
+  models: [random_forest, lightgbm, catboost, mlp]  # tabpfn has no search space
+  n_trials: 30
+  inner_splits: 3
+
+# Optional: paths to a tuned_params.json produced by the tune stage.
+# base_params_file  -> stage 'denoise' overlays onto base_models (OOF generators),
+#                      so the Kalman Q sweep runs on tuned prediction series.
+# stack_params_file -> stage 'stack' overlays onto stack_base_models.
+base_params_file: null
+stack_params_file: null
+
+# Stage 'denoise': base models whose OOF predictions get Kalman-denoised.
+base_models:
+  random_forest: {}
+  lightgbm: {}
+  catboost: {}
+  tabpfn: {}
+  mlp: {}
+
+# Stage 'stack': base ("super") models trained on the denoised feature table.
+# Tuned hyperparameters can be pasted here or supplied via overrides.
+stack_base_models:
+  random_forest: {}
+  lightgbm: {}
+  catboost: {}
+  tabpfn: {}
+  mlp: {}
+
+# Stage 'stack': candidate meta models (the "tournament").
+meta_models:
+  random_forest: {}
+  lightgbm: {}
+  catboost: {}
+  tabpfn: {}
+  mlp: {}

@@ -1,0 +1,34 @@
+==============================================================================
+SHARED FOLD SET  (shuffled 5-fold, n=5334 records, k=5)
+==============================================================================
+
+Per-fold R^2
+configuration                  f1       f2       f3       f4       f5      mean      sd
+C1 single learner          0.8493   0.8550   0.8759   0.8578   0.8664    0.8609  0.0104
+C2 unfiltered ensemble     0.8479   0.8446   0.8729   0.8516   0.8644    0.8563  0.0119
+C3 filtered ensemble       0.8843   0.8784   0.8960   0.8752   0.8896    0.8847  0.0084
+
+Per-fold MAE (mm/min)
+C1 single learner          4.0323   3.9348   3.7675   3.9776   4.0729    3.9570  0.1183
+C2 unfiltered ensemble     4.0435   3.9958   3.8012   4.0329   4.1012    3.9949  0.1147
+C3 filtered ensemble       3.4859   3.4548   3.3247   3.5710   3.5711    3.4815  0.1017
+
+--- Fold-level paired t-test on R^2 (n=5 folds) ---
+  C3 vs C2: mean_d=+0.0284 95%CI[+0.0207,+0.0362] t=+10.237 p=0.0005 d_z=+4.58 | wins 5/5 | Wilcoxon p=0.0625
+  C3 vs C1: mean_d=+0.0238 95%CI[+0.0155,+0.0322] t=+7.914 p=0.0014 d_z=+3.54 | wins 5/5 | Wilcoxon p=0.0625
+  C2 vs C1: mean_d=-0.0046 95%CI[-0.0092,+0.0000] t=-2.749 p=0.0514 d_z=-1.23 | wins 0/5 | Wilcoxon p=0.0625
+  Holm-adjusted p  C3 vs C2: 0.0015
+  Holm-adjusted p  C3 vs C1: 0.0028
+  Holm-adjusted p  C2 vs C1: 0.0514
+
+--- Record-level paired absolute errors (n=5334) ---
+  C3 vs C2: dMAE=+0.5134 mm/min Wilcoxon p=4.68e-77
+      block-bootstrap 95%CI  b=20 [+0.4240,+0.6166]  b=50 [+0.4211,+0.6290]  b=100 [+0.4241,+0.6334]
+  C3 vs C1: dMAE=+0.4755 mm/min Wilcoxon p=7.53e-70
+      block-bootstrap 95%CI  b=20 [+0.3866,+0.5831]  b=50 [+0.3837,+0.5941]  b=100 [+0.3907,+0.5930]
+  C2 vs C1: dMAE=-0.0379 mm/min Wilcoxon p=0.000232
+      block-bootstrap 95%CI  b=20 [-0.0609,-0.0145]  b=50 [-0.0606,-0.0130]  b=100 [-0.0602,-0.0119]
+  Holm-adjusted p  C3 vs C2: 1.4e-76
+  Holm-adjusted p  C3 vs C1: 1.51e-69
+  Holm-adjusted p  C2 vs C1: 0.000232
+

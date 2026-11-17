@@ -1,0 +1,29 @@
+{
+  "random_forest": {
+    "n_estimators": 831,
+    "max_depth": 37,
+    "min_samples_split": 8,
+    "min_samples_leaf": 2
+  },
+  "lightgbm": {
+    "n_estimators": 1664,
+    "learning_rate": 0.027891618846543027,
+    "num_leaves": 134,
+    "reg_alpha": 5.356974625540881,
+    "reg_lambda": 5.1076101706929755
+  },
+  "catboost": {
+    "iterations": 2324,
+    "learning_rate": 0.05226666084013841,
+    "depth": 8,
+    "l2_leaf_reg": 4.663539781089129
+  },
+  "mlp": {
+    "n_layers": 3,
+    "dropout_rate": 0.13941443539523385,
+    "learning_rate": 0.0008007687691784128,
+    "n_units_l0": 166,
+    "n_units_l1": 178,
+    "n_units_l2": 130
+  }
+}

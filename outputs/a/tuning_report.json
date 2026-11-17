@@ -1,0 +1,262 @@
+{
+  "timestamp": "2026-10-25 05:44:32",
+  "stage": "tune",
+  "cv": {
+    "scheme": "shuffled",
+    "n_splits": 5,
+    "random_state": 42,
+    "gap": 0
+  },
+  "kalman_mode": "causal",
+  "tuning": {
+    "n_trials": 30,
+    "inner_splits": 3
+  },
+  "models": {
+    "random_forest": {
+      "nested_oof": {
+        "r2": 0.8505276754367186,
+        "mae": 4.135584422272644,
+        "rmse": 6.059128900236234
+      },
+      "nested_fold_params": [
+        {
+          "n_estimators": 1395,
+          "max_depth": 36,
+          "min_samples_split": 4,
+          "min_samples_leaf": 2
+        },
+        {
+          "n_estimators": 1461,
+          "max_depth": 22,
+          "min_samples_split": 9,
+          "min_samples_leaf": 1
+        },
+        {
+          "n_estimators": 1461,
+          "max_depth": 22,
+          "min_samples_split": 9,
+          "min_samples_leaf": 1
+        },
+        {
+          "n_estimators": 1175,
+          "max_depth": 34,
+          "min_samples_split": 8,
+          "min_samples_leaf": 1
+        },
+        {
+          "n_estimators": 1461,
+          "max_depth": 22,
+          "min_samples_split": 9,
+          "min_samples_leaf": 1
+        }
+      ],
+      "nested_fold_inner_r2": [
+        0.8326455750681127,
+        0.832946589723603,
+        0.8320411867175032,
+        0.8382991441630376,
+        0.833924676424565
+      ],
+      "flat_best_params": {
+        "n_estimators": 831,
+        "max_depth": 37,
+        "min_samples_split": 8,
+        "min_samples_leaf": 2
+      },
+      "flat_best_r2_biased": 0.8495362479509557
+    },
+    "lightgbm": {
+      "nested_oof": {
+        "r2": 0.8603293215077866,
+        "mae": 4.068277554181364,
+        "rmse": 5.857097030866404
+      },
+      "nested_fold_params": [
+        {
+          "n_estimators": 1472,
+          "learning_rate": 0.02256750082073798,
+          "num_leaves": 150,
+          "reg_alpha": 4.710097085769724,
+          "reg_lambda": 9.106900630672044
+        },
+        {
+          "n_estimators": 1760,
+          "learning_rate": 0.008370996766368818,
+          "num_leaves": 123,
+          "reg_alpha": 2.969973418108802,
+          "reg_lambda": 3.7390091914476606
+        },
+        {
+          "n_estimators": 1576,
+          "learning_rate": 0.021884558934675443,
+          "num_leaves": 41,
+          "reg_alpha": 0.6514744453777602,
+          "reg_lambda": 9.876765045738356
+        },
+        {
+          "n_estimators": 909,
+          "learning_rate": 0.022734417862843817,
+          "num_leaves": 146,
+          "reg_alpha": 2.9920393461075334,
+          "reg_lambda": 5.332040910170009
+        },
+        {
+          "n_estimators": 1481,
+          "learning_rate": 0.023274609051297347,
+          "num_leaves": 113,
+          "reg_alpha": 2.558020121446822,
+          "reg_lambda": 5.773722247157881
+        }
+      ],
+      "nested_fold_inner_r2": [
+        0.8398189071086106,
+        0.8412772967447181,
+        0.8445511233467916,
+        0.8463877714614192,
+        0.8468493895255801
+      ],
+      "flat_best_params": {
+        "n_estimators": 1664,
+        "learning_rate": 0.027891618846543027,
+        "num_leaves": 134,
+        "reg_alpha": 5.356974625540881,
+        "reg_lambda": 5.1076101706929755
+      },
+      "flat_best_r2_biased": 0.8595427882984185
+    },
+    "catboost": {
+      "nested_oof": {
+        "r2": 0.8646109953682461,
+        "mae": 4.010396090412097,
+        "rmse": 5.766622139694478
+      },
+      "nested_fold_params": [
+        {
+          "iterations": 2767,
+          "learning_rate": 0.027661644613871952,
+          "depth": 8,
+          "l2_leaf_reg": 2.057434755838877
+        },
+        {
+          "iterations": 1443,
+          "learning_rate": 0.061017639856200186,
+          "depth": 8,
+          "l2_leaf_reg": 6.3058370490432845
+        },
+        {
+          "iterations": 2684,
+          "learning_rate": 0.04569250895797188,
+          "depth": 8,
+          "l2_leaf_reg": 3.747129084658364
+        },
+        {
+          "iterations": 2484,
+          "learning_rate": 0.05845920915873563,
+          "depth": 8,
+          "l2_leaf_reg": 3.9577822081244993
+        },
+        {
+          "iterations": 2278,
+          "learning_rate": 0.051441787018307886,
+          "depth": 10,
+          "l2_leaf_reg": 6.956998857835887
+        }
+      ],
+      "nested_fold_inner_r2": [
+        0.8519253873129901,
+        0.8495253854582953,
+        0.8532289227285769,
+        0.8541426759420244,
+        0.8511851070533597
+      ],
+      "flat_best_params": {
+        "iterations": 2324,
+        "learning_rate": 0.05226666084013841,
+        "depth": 8,
+        "l2_leaf_reg": 4.663539781089129
+      },
+      "flat_best_r2_biased": 0.8646302594539023
+    },
+    "mlp": {
+      "nested_oof": {
+        "r2": 0.8221879253797029,
+        "mae": 4.689645860755672,
+        "rmse": 6.608614545142739
+      },
+      "nested_fold_params": [
+        {
+          "n_layers": 3,
+          "dropout_rate": 0.18480550098044657,
+          "learning_rate": 0.002308449692852046,
+          "n_units_l0": 101,
+          "n_units_l1": 71,
+          "n_units_l2": 70
+        },
+        {
+          "n_layers": 2,
+          "dropout_rate": 0.1818987123272211,
+          "learning_rate": 0.002068561610318361,
+          "n_units_l0": 133,
+          "n_units_l1": 63
+        },
+        {
+          "n_layers": 2,
+          "dropout_rate": 0.15756630768223068,
+          "learning_rate": 0.0006114276191202083,
+          "n_units_l0": 117,
+          "n_units_l1": 145
+        },
+        {
+          "n_layers": 2,
+          "dropout_rate": 0.10125167838793145,
+          "learning_rate": 0.0004848401495672278,
+          "n_units_l0": 242,
+          "n_units_l1": 102
+        },
+        {
+          "n_layers": 2,
+          "dropout_rate": 0.18399543534161372,
+          "learning_rate": 0.0021507817596537852,
+          "n_units_l0": 250,
+          "n_units_l1": 86
+        }
+      ],
+      "nested_fold_inner_r2": [
+        0.8129339238356482,
+        0.814884104067214,
+        0.8111984978357486,
+        0.8171521275392931,
+        0.8188713942983398
+      ],
+      "flat_best_params": {
+        "n_layers": 3,
+        "dropout_rate": 0.13941443539523385,
+        "learning_rate": 0.0008007687691784128,
+        "n_units_l0": 166,
+        "n_units_l1": 178,
+        "n_units_l2": 130
+      },
+      "flat_best_r2_biased": 0.8276845014605059
+    }
+  },
+  "environment": {
+    "python_version": "3.12.3",
+    "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "torch_version": "2.13.0+cu130",
+    "cuda_version": "13.0",
+    "gpu_model": "NVIDIA RTX 5000 Ada Generation Laptop GPU",
+    "gpu_count": 1,
+    "cudnn_deterministic": true,
+    "packages": {
+      "numpy": "2.5.1",
+      "pandas": "3.0.3",
+      "scikit-learn": "1.9.0",
+      "lightgbm": "4.6.0",
+      "catboost": "1.2.10",
+      "tabpfn": "7.1.1",
+      "optuna": "4.9.0",
+      "torch": "2.13.0"
+    }
+  }
+}

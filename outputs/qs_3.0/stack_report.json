@@ -1,0 +1,110 @@
+{
+  "timestamp": "2026-10-25 08:31:52",
+  "stage": "stack",
+  "cv": {
+    "scheme": "shuffled",
+    "n_splits": 5,
+    "random_state": 42,
+    "gap": 0
+  },
+  "kalman_mode": "causal",
+  "individual_base_models": {
+    "random_forest": {
+      "r2": 0.8525008418086233,
+      "mae": 4.081893815130288,
+      "rmse": 6.019003116535879
+    },
+    "lightgbm": {
+      "r2": 0.8582355800001494,
+      "mae": 4.087423907167695,
+      "rmse": 5.900834307522763
+    },
+    "catboost": {
+      "r2": 0.8582681452547538,
+      "mae": 4.06950052124509,
+      "rmse": 5.9001565168315215
+    },
+    "tabpfn": {
+      "r2": 0.8715698784021673,
+      "mae": 3.7618828488862333,
+      "rmse": 5.616467423098372
+    },
+    "mlp": {
+      "r2": 0.8385454885779529,
+      "mae": 4.414600580284826,
+      "rmse": 6.297307342232601
+    }
+  },
+  "meta_tournament_r2": {
+    "random_forest": 0.8577648201090508,
+    "lightgbm": 0.8603065858122229,
+    "catboost": 0.8632427136780321,
+    "tabpfn": 0.8705903781876945,
+    "mlp": 0.8719997424084933
+  },
+  "ranking": [
+    [
+      "stacking_meta_mlp",
+      0.8719997424084933
+    ],
+    [
+      "tabpfn",
+      0.8715698784021673
+    ],
+    [
+      "stacking_meta_tabpfn",
+      0.8705903781876945
+    ],
+    [
+      "stacking_meta_catboost",
+      0.8632427136780321
+    ],
+    [
+      "stacking_meta_lightgbm",
+      0.8603065858122229
+    ],
+    [
+      "catboost",
+      0.8582681452547538
+    ],
+    [
+      "lightgbm",
+      0.8582355800001494
+    ],
+    [
+      "stacking_meta_random_forest",
+      0.8577648201090508
+    ],
+    [
+      "random_forest",
+      0.8525008418086233
+    ],
+    [
+      "mlp",
+      0.8385454885779529
+    ]
+  ],
+  "champion": {
+    "name": "stacking_meta_mlp",
+    "r2": 0.8719997424084933
+  },
+  "environment": {
+    "python_version": "3.12.3",
+    "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "torch_version": "2.13.0+cu130",
+    "cuda_version": "13.0",
+    "gpu_model": "NVIDIA RTX 5000 Ada Generation Laptop GPU",
+    "gpu_count": 1,
+    "cudnn_deterministic": true,
+    "packages": {
+      "numpy": "2.5.1",
+      "pandas": "3.0.3",
+      "scikit-learn": "1.9.0",
+      "lightgbm": "4.6.0",
+      "catboost": "1.2.10",
+      "tabpfn": "7.1.1",
+      "optuna": "4.9.0",
+      "torch": "2.13.0"
+    }
+  }
+}

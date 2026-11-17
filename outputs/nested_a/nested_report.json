@@ -1,0 +1,121 @@
+{
+  "timestamp": "2026-10-25 03:00:11",
+  "stage": "nested",
+  "cv": {
+    "scheme": "shuffled",
+    "n_splits": 5,
+    "random_state": 42,
+    "gap": 0
+  },
+  "kalman_mode": "causal",
+  "inner_splits": 5,
+  "level2_nested": {
+    "random_forest": {
+      "r2": 0.8524016005779536,
+      "mae": 4.11552380952381,
+      "rmse": 6.021027646175568
+    },
+    "lightgbm": {
+      "r2": 0.8497371213022675,
+      "mae": 4.275413697338679,
+      "rmse": 6.075131034684723
+    },
+    "catboost": {
+      "r2": 0.8549293464246692,
+      "mae": 4.221888290012826,
+      "rmse": 5.969247430681491
+    },
+    "tabpfn": {
+      "r2": 0.8858702473910627,
+      "mae": 3.4665871580486494,
+      "rmse": 5.294552210041303
+    },
+    "mlp": {
+      "r2": 0.8119003733535795,
+      "mae": 4.871169405516319,
+      "rmse": 6.797101639084353
+    }
+  },
+  "ranking": [
+    [
+      "tabpfn",
+      0.8858702473910627
+    ],
+    [
+      "catboost",
+      0.8549293464246692
+    ],
+    [
+      "random_forest",
+      0.8524016005779536
+    ],
+    [
+      "lightgbm",
+      0.8497371213022675
+    ],
+    [
+      "mlp",
+      0.8119003733535795
+    ]
+  ],
+  "champion": {
+    "name": "tabpfn",
+    "r2": 0.8858702473910627
+  },
+  "observation_noise_per_outer_fold": [
+    {
+      "random_forest": 41.09137915303492,
+      "lightgbm": 43.27823849488722,
+      "catboost": 41.17171064631445,
+      "tabpfn": 36.93669793829865,
+      "mlp": 50.80971882047664
+    },
+    {
+      "random_forest": 42.16235916334661,
+      "lightgbm": 44.00362790548385,
+      "catboost": 42.13051796195937,
+      "tabpfn": 36.536629601540255,
+      "mlp": 49.62131510649778
+    },
+    {
+      "random_forest": 41.38972341598313,
+      "lightgbm": 43.539222244818674,
+      "catboost": 42.2423278756475,
+      "tabpfn": 36.79621233402562,
+      "mlp": 51.67874828138801
+    },
+    {
+      "random_forest": 40.38070875228498,
+      "lightgbm": 41.17381813542439,
+      "catboost": 41.77556162009185,
+      "tabpfn": 36.27593626364005,
+      "mlp": 50.41312173487942
+    },
+    {
+      "random_forest": 41.71348952249297,
+      "lightgbm": 42.990400971588585,
+      "catboost": 41.14852330985107,
+      "tabpfn": 36.411479476664965,
+      "mlp": 50.218417483125585
+    }
+  ],
+  "environment": {
+    "python_version": "3.12.3",
+    "platform": "Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "torch_version": "2.13.0+cu130",
+    "cuda_version": "13.0",
+    "gpu_model": "NVIDIA RTX 5000 Ada Generation Laptop GPU",
+    "gpu_count": 1,
+    "cudnn_deterministic": true,
+    "packages": {
+      "numpy": "2.5.1",
+      "pandas": "3.0.3",
+      "scikit-learn": "1.9.0",
+      "lightgbm": "4.6.0",
+      "catboost": "1.2.10",
+      "tabpfn": "7.1.1",
+      "optuna": "4.9.0",
+      "torch": "2.13.0"
+    }
+  }
+}

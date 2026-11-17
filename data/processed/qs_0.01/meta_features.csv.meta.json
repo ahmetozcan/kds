@@ -1,0 +1,15 @@
+{
+  "created": "2026-10-25 08:07:02",
+  "rows": 5334,
+  "columns": [
+    "random_forest",
+    "lightgbm",
+    "catboost",
+    "tabpfn",
+    "mlp",
+    "rop_mm_m"
+  ],
+  "sha256": "b9c380508fd6",
+  "stage": "stack",
+  "seed": 42
+}

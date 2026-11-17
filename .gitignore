@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Environments
+.venv/
+
+# Caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+catboost_info/
+
+# Figures, which run/pipeline/make_figures.py redraws from the artifacts
+paper/figures/*.pdf
+
+# Runs other than the ones published with the paper
+outputs/*/run.log
+outputs/*/tune.log
+outputs/*/denoise.log
+outputs/*/filter.log
+
+# Editor and OS noise
+.vscode/
+.idea/
+.DS_Store
+*:Zone.Identifier
